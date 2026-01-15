@@ -595,7 +595,7 @@ img {
     position: relative;
     width: 100%;
     max-width: 350px; /* Adjust size to match your cert cards */
-    height: 200px;
+    height: 150px;
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
