@@ -652,7 +652,7 @@ img {
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: 250px; /* Adjust height as needed */
+    height: 150px; /* Adjust height as needed */
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
