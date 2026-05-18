@@ -69,7 +69,10 @@
 
 /*===== RESET =====*/
 *, ::before, ::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  overflow-y: scroll; 
+}
 h1, h2, p { margin: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
 a  { text-decoration: none; color: inherit; }
@@ -93,6 +96,7 @@ body {
   position: fixed; top: 0; left: 0;
   width: 100vw; height: 100vh;
   z-index: -5; pointer-events: none;
+  width: 100%;
 }
 
 /*===== SCROLLBAR =====*/
@@ -143,7 +147,7 @@ body {
 ══════════════════════════════════════ */
 .l-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0; 
   width: 100%;
   z-index: var(--z-fixed);
   background: var(--nav-bg);
@@ -152,6 +156,11 @@ body {
   border-bottom: 1px solid var(--nav-border);
   box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08), inset 0 -1px 0 rgba(37, 99, 235, 0.1);
   transition: all .35s ease;
+  transform: translateZ(0); 
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  left: 0;
+  right: 0;
 }
 
 .l-header::before {
@@ -293,6 +302,16 @@ body {
 
 /* ── Mobile menu panel (Now includes tablets up to 1024px) ── */
 @media (max-width: 1024px) {
+  .nav {
+    position: relative;
+    padding-right: 1rem;  
+  }
+
+  /* Anchor the toggle firmly to the right */
+  .nav__toggle {
+    margin-left: auto;     /* pushes it to the right via flex flow */
+    flex-shrink: 0;
+  }
   .nav__menu {
     position: fixed;
     top: var(--header-height); right: -100%;
