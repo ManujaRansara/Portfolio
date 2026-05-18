@@ -6,31 +6,28 @@
 
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-            />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     
         <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-
         <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
         <link rel="manifest" href="assets/img/site.webmanifest">
 
         <title>Manuja Hapuarachchi</title>
     </head>
     <body>
-        <!--===== HEADER =====-->
+        <div class="sun-glow"></div> 
+        <canvas id="particle-canvas"></canvas>
+
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
                     <a href="#" class="nav__logo">Manuja Hapuarachchi</a>
                 </div>
-
+              
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
@@ -49,26 +46,45 @@
             </nav>
         </header>
 
+        <!-- Mobile nav overlay (dark scrim behind the slide-in menu) -->
+        <div class="nav__overlay" id="nav-overlay"></div>
+
         <main class="l-main">
-            <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
+                <!-- Futuristic Profile Image Setup -->
                 <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
-                        </g>
-                    </svg>
+                    <div class="home__profile-container">
+                        <!-- Orbiting HUD Rings -->
+                        <div class="hud-ring hud-ring-1"></div>
+                        <div class="hud-ring hud-ring-2"></div>
+                        <div class="hud-ring hud-ring-3"></div>
+                        
+                        <!-- Main Geometric Frame -->
+                        <div class="home__profile-frame">
+                            <!-- Animated border glow -->
+                            <div class="profile-gradient"></div>
+                            <!-- Image wrapper to create the cut-out border effect -->
+                            <div class="profile-inner">
+                                <img src="assets/img/perfil.png" alt="Profile" class="home__profile-img">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="home__data">
-                    <h1 class="home__title">Hi, I'm <br><span style="color: rgb(11, 41, 138);">Manuja </span> <br> <span style="color: rgb(11, 46, 160);">Hapuarachchi</span></h1>
+                    <h1 class="home__title"><span id="typewriter"></span></h1>
 
-                    <a href="assets/cv/Manuja_Hapuarachchi.pdf" class="button" download>
-                    <i class="bx bx-download" style="font-size:20px;"></i>&nbsp; &nbsp;&nbsp;Download CV
+                    <!--
+                      Download CV — target="_blank" ensures iOS Safari opens the PDF
+                      in its viewer (download attr alone is ignored on iOS).
+                    -->
+                    <a href="assets/cv/Manuja Hapuarachchi.pdf"
+                       class="button"
+                       onclick="forceDownload(event, 'assets/cv/Manuja Hapuarachchi.pdf', 'Manuja Hapuarachchi.pdf')"
+                       download="Manuja Hapuarachchi.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="bx bx-download" style="font-size:20px;"></i>&nbsp; &nbsp;&nbsp;Download CV
                     </a>
                 </div>
 
@@ -77,18 +93,14 @@
                     <a href="https://github.com/ManujaRansara" class="home__social-icon"><i class='bx bxl-github' ></i></a>
                     <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="home__social-icon"><i class="fab fa-hackerrank"></i></a>
                     <a href="mailto:hapuarachchiransara@gmail.com" class="home__social-icon">
-                       <i class='bx bx-envelope' style="font-size:30px; color:black;"></i>
-
+                       <i class='bx bx-envelope' style="font-size:30px; "></i>
                     </a>
-                      <a href="tel:+94789885199" class="home__social-icon">
-                            <i class='bx bx-phone' style="font-size:30px; color:black;"></i>
-                        </a>
+                    <a href="tel:+94789885199" class="home__social-icon">
+                        <i class='bx bx-phone' style="font-size:30px; "></i>
+                    </a>
                 </div>
-
-            
             </section>
 
-            <!--===== ABOUT =====-->
             <section class="about section " id="about">
                 <h2 class="section-title">About</h2>
 
@@ -102,12 +114,11 @@
                         <p class="about__text">
                       I am a Computer Science undergraduate at UCSC who is deeply passionate about Software Engineering , Quality Engineering , DevOps , and Cloud computing.
                       I enjoy breaking down complex software systems and understanding them from an architectural perspective.
-                      I am always curious about how systems are designed, tested, deployed, and maintained, and I actively work on improving my technical and problem-solving skills. </p>           
-                    </div>                                   
+                      I am always curious about how systems are designed, tested, deployed, and maintained, and I actively work on improving my technical and problem-solving skills. </p>          
+                    </div>                                  
                 </div>
             </section>
 
-            <!--===== Education=====-->
             <section class="skills section" id="skills">
                 <div class="Education" >
                 <h2 class="section-title"  >Education</h2>
@@ -130,12 +141,8 @@
                             </div>
                             </div>
 
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                               
-                            </div>
+                            <div class="skills__bar skills__html"></div>
+                            <div></div>
                         </div>
                         <div class="skills__data">
                             <div><span class="skills__date"> Mar 2013 – Dec 2022</span>  </div>   <br>
@@ -163,19 +170,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                               
-                            </div>
+                            <div class="skills__bar skills__css"></div>
+                            <div></div>
                         </div>
                     
                     </div>
               
             </section>
 
-            <!--===== WORK =====-->
             <section class="work section" id="work">
                 <div class="Education" >
                 <h2 class="section-title">Experience</h2>
@@ -193,14 +195,14 @@
                             </div> <br>
 
                             <div style="font-size: 0.95rem; color: #343434; line-height: 1.6; margin-top: 6px; margin-left: 14px;">
-                                <div style="font-weight: 600;font-family: 'Poppins', sans-serif; font-style: italic;">
+                                <div style="font-weight: 600; font-style: italic;">
                                     Software Quality Engineering Intern (Performance and Automation)
                                 </div>
                             </div>
 
-                            <div id="pickmeDesc" class="project__description" style="font-family: 'Poppins', sans-serif; margin-left: 14px; margin-top: 6px; color: #454545; font-size: 0.9rem">
+                            <div id="pickmeDesc" class="project__description">
                                 <div class="project__description-content">
-                                    Currently working within the Performance Engineering team focusing on performance testing and test automation. My responsibilities include:
+                                    Worked within the Performance Engineering team focusing on performance testing and test automation. My responsibilities include:
                                           <br>
                                     <br>• Developed automated solutions to transform traditional manual performance profiling  for Android applications.
                                     <br>  &nbsp;&nbsp; Skills: ADB , Appium , Docker , Gitlab CI/CD , Python  <br>
@@ -217,28 +219,55 @@
                                 </div>
                             </div>
 
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                               
-                            </div>
+                            <div class="skills__bar skills__html"></div>
+                            <div></div>
                         </div>
                     </div>
                 
             </div>
             </section>
 
-                <!--===== Projects =====-->
-            <section class="work section" id="Projects">
+                <section class="work section" id="Projects">
                 <div class="Education" >
                 <h2 class="section-title">Projects</h2>
-               <div class="skills__data" style="margin-bottom: 20px;">
+                <div class="skills__data" style="margin-bottom: 20px;">
 
-                    <!-- Project Date -->
                     <div><span class="skills__date">May 2025 – Oct 2025</span></div><br>
 
-                    <!-- Project Header: Image + Name + GitHub -->
+                    <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
+                        <img src="assets/img/pickme.jpg" alt="PickMe" class="skills__icon-img"> 
+                        <span class="skills__name" style="font-weight: 600;">PickMe Release Tracker ( Open Source Project )</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://github.com/ManujaRansara/PickMe-Project-Tracking-Portal" target="_blank" 
+                        class="home__social-icon"><i class='bx bxl-github'></i></a>
+                        
+                        <button onclick="toggleDescription('PickMeDesc', this)" 
+                                style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
+                            <i class='bx bx-down-arrow'></i>
+                        </button>
+                    </div><br>
+
+                    <div style="margin-left: 14px; font-size: 0.88rem; color: #3a3939; font-style: italic;">
+                        <strong>Technologies:</strong> Java Spring Boot, PostgreSQL,React  <br>
+                        <strong>Architecture:</strong> Multi-tier Architecture 
+                    </div> <br>
+
+                    <div id="PickMeDesc" class="project__description">
+                       <div class="project__description-content">
+                            Implemented using Java Spring Boot, React, and PostgreSQL, PickMe Release Tracker tracks the progress of 100+
+                            monthly releases. It can create any team and register them to the new monthly release, improving coordination
+                            by 40%. Release Tracker evaluates each team's performance for new releases using JIRA tickets, saving  5+ hours
+                            of manual work. It also shows exactly what versions are currently in production for all 4+ apps.
+                      </div>   
+                  </div>
+                       <div class="skills__bar skills__html">
+
+                            </div>
+
+                </div>
+               <div class="skills__data" style="margin-bottom: 20px;">
+
+                    <div><span class="skills__date">May 2025 – Oct 2025</span></div><br>
+
                     <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
                         <img src="assets/img/farmio.png" alt="Farmio" 
                             style="width: 120px; height: 46px; object-fit: contain;">
@@ -246,21 +275,18 @@
                         <a href="https://github.com/ManujaRansara/Farmio" target="_blank" 
                         class="home__social-icon"><i class='bx bxl-github'></i></a>
                         
-                        <!-- Modern Expand/Collapse Button -->
                         <button onclick="toggleDescription('farmioDesc', this)" 
                                 style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
                             <i class='bx bx-down-arrow'></i>
                         </button>
                     </div><br>
 
-                    <!-- Always Visible: Technologies & Architecture -->
                     <div style="margin-left: 14px; font-size: 0.88rem; color: #3a3939; font-style: italic;">
                         <strong>Technologies:</strong> Java Spring Boot, Microservices, REST APIs, PostgreSQL, React  <br>
                         <strong>Architecture:</strong> Microservices Architecture
                     </div> <br>
 
-                    <!-- Collapsible Description Only -->
-                    <div id="farmioDesc" style=" font-family: 'Poppins', sans-serif; margin-left: 14px; margin-top: 6px;color: #454545;font-size: 0.9rem" class="project__description">
+                    <div id="farmioDesc" class="project__description">
                        <div class="project__description-content">
                         Farmio is a comprehensive smart agriculture platform connecting farmers, warehouse owners, transport providers, waste management agents, and customers. It addresses inefficiencies in the agricultural supply chain, ensuring seamless product distribution, transparent logistics, and effective waste management.
                         I contributed to designing and implementing microservices for inventory management, order tracking, and delivery coordination, enabling scalable, maintainable, and robust system architecture. This project enhanced my skills in full-stack development, distributed systems, and collaboration across multiple stakeholders.
@@ -294,10 +320,10 @@
                             <strong>Architecture:</strong> MVC Architecture
                         </div> <br>
 
-                        <div id="parlimateDesc" style=" font-family: 'Poppins', sans-serif; margin-left: 14px; margin-top: 6px;  color:  #454545;font-size:0.9rem;" class="project__description">
+                        <div id="parlimateDesc" class="project__description">
                           <div class="project__description-content">
                             Parlimate is a digital platform connecting politicians, citizens, and political parties, designed to enhance transparency, engagement, and participation in civic processes. It solves challenges such as limited communication between citizens and politicians, fragmented political information, and lack of structured feedback mechanisms.
-                            The platform allows citizens to participate in surveys, view politicians’ profiles, comment on posts, and engage in fundraising projects, while enabling politicians to share announcements, join political parties, and interact with constituents. Political parties can recruit politicians and manage party activities efficiently.
+                            The platform allows citizens to participate in surveys, view politicians' profiles, comment on posts, and engage in fundraising projects, while enabling politicians to share announcements, join political parties, and interact with constituents. Political parties can recruit politicians and manage party activities efficiently.
                          </div>   
                         </div>
                            <div class="skills__bar skills__html">
@@ -327,10 +353,10 @@
                             <strong>Technologies:</strong> Flutter , Kotlin , Firebase Database , Dart , Figma<br>
                         </div> <br>
 
-                        <div id="convoDesc" style=" font-family: 'Poppins', sans-serif; margin-left: 14px; margin-top: 6px;  color:  #454545;font-size:0.9rem;" class="project__description">
+                        <div id="convoDesc" class="project__description">
                           <div class="project__description-content">  
                                The Convo is a lightweight, user friendly mobile messaging application designed for seamless one to one communication. Built using Flutter for cross platform development and Firebase for real time messaging and authentication, the app enables fast, reliable text based conversations over the internet.
-                               A key feature of The Convo is QR code based device pairing, which allows two users to establish a secure chat session instantly without manual configuration. This approach makes the connection process simple, intuitive, and secure.                  
+                               A key feature of The Convo is QR code based device pairing, which allows two users to establish a secure chat session instantly without manual configuration. This approach makes the connection process simple, intuitive, and secure.                
                          </div>  
                      </div>
                            <div class="skills__bar skills__html">
@@ -360,7 +386,7 @@
                             <strong>Technologies:</strong> HTML , CSS , Javascript , PHP , MySQL , Xamp , VS code<br>
                         </div> <br>
 
-                        <div id="ceyactDesc" style=" font-family: 'Poppins', sans-serif; margin-left: 14px; margin-top: 6px;  color:  #454545;font-size:0.9rem;" class="project__description">
+                        <div id="ceyactDesc" class="project__description">
                           <div class="project__description-content"> 
                              Ceyact is a social networking platform designed to enable users to create personalized profiles and interact with others in a dynamic and engaging digital environment. The platform provides core social media functionalities, including creating and sharing posts, following other users, reacting to content, and engaging through interactive features.  </div>
                           </div>  
@@ -375,8 +401,7 @@
             </div>
             </section>
 
-                 <!--===== Certifications =====-->
-            <section class="work section" id="certifications">
+                 <section class="work section" id="certifications">
                 <div class="Education" >
                 <h2 class="section-title">Certifications</h2>
                      <div class="cert__container">
@@ -402,7 +427,7 @@
                                 <div class="cert__button">View Certificate</div>
                             </div>
                         </a>
-                           <a href="https://www.linkedin.com/learning/certificates/7180799507aafb7ed25e903dec8b5a3d521913d4f532baed89dfd589ececa568?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BcpQGyiQOSSeN5fligNv7VQ%3D%3D" target="_blank" class="cert__card">
+                        <a href="https://www.linkedin.com/learning/certificates/7180799507aafb7ed25e903dec8b5a3d521913d4f532baed89dfd589ececa568?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BcpQGyiQOSSeN5fligNv7VQ%3D%3D" target="_blank" class="cert__card">
                             <div class="cert__content">
                                    <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Machine Learning Foundations: Statistics</h3>
                                 <span class="cert__issuer">LinkedIn</span>
@@ -413,7 +438,7 @@
                             </div>
                         </a>
                         
-                           <a href="https://www.linkedin.com/learning/certificates/4a57019deca75652cdecd26b2e796a9353de4bb2ecd1a5414392a8006032c7d7?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BuW9qlZaVRBuBcorG5shDEg%3D%3D" target="_blank" class="cert__card">
+                        <a href="https://www.linkedin.com/learning/certificates/4a57019deca75652cdecd26b2e796a9353de4bb2ecd1a5414392a8006032c7d7?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BuW9qlZaVRBuBcorG5shDEg%3D%3D" target="_blank" class="cert__card">
                             <div class="cert__content">
                                    <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Deep Learning: Getting Started</h3>
                                 <span class="cert__issuer">LinkedIn</span>
@@ -453,7 +478,7 @@
                                 <div class="cert__button">View Certificate</div>
                             </div>
                         </a>
-                               <a href="https://www.credly.com/badges/44a0c432-6c39-455b-9602-ebd0d5623e4e/public_url" target="_blank" class="cert__card">
+                               <a href="#" target="_blank" class="cert__card">
                             <div class="cert__content">
                                    <i class='bx bx-award cert__icon'></i> <h3 class="cert__name"> Introduction to Cloud : 101</h3>
                                 <span class="cert__issuer">AWS</span>
@@ -473,9 +498,6 @@
                                 <div class="cert__button">View Certificate</div>
                             </div>
                         </a>
-                        
-
-
                     </div>
                     </div>
                 
@@ -505,7 +527,6 @@
             </section>
         </main>
 
-        <!--===== FOOTER =====-->
         <footer class="footer">
             <p class="footer__title">Manuja Hapuarachchi</p>
             <div class="footer__social">
@@ -514,35 +535,126 @@
                     <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="footer__icon"><i class="fab fa-hackerrank"></i></a>
                     <a href="mailto:hapuarachchiransara@gmail.com" class="footer__icon">
                        <i class='bx bx-envelope' style="font-size:30px; "></i>
-
                     </a>
             </div>
-            <p class="footer__copy">&#169; Developed by Manuja. All rigths reserved</p>
+            <p class="footer__copy">&#169; Developed by Manuja. All rights reserved</p>
         </footer>
 
 
-        <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-        <!--===== MAIN JS =====-->
+        <script>
+            var typed = new Typed('#typewriter', {
+                strings: [
+                    "<span style='font-size: 0.85em; font-weight: 700; color: #111; letter-spacing: -0.5px; line-height: 1.2;'>Hi, I'm</span><br>" +
+                    "<span style='white-space: nowrap; font-weight: 700; letter-spacing: -2px; line-height: 1.1; background: linear-gradient(90deg, rgb(11, 41, 138) 0%, rgb(26, 102, 255) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>Manuja <br>  Hapuarachchi</span>" +
+                    "<span style='color: rgb(11, 41, 138); font-weight: 700;'>.</span>"
+                ],
+                typeSpeed: 60,
+                backDelay: 4000,
+                startDelay: 500,
+                showCursor: true,    
+                cursorChar: "<span style='color: rgb(11, 41, 138); font-weight: 300;'>|</span>", 
+                loop: true,          
+                fadeOut: true,       
+                fadeOutClass: 'typed-fade-out',
+                fadeOutDelay: 500    
+            });
+        </script>
+        
+        <!-- Load main.js (handles nav toggle .show class) -->
         <script src="assets/js/main.js"></script>
-    </body>
-         <script>
+
+        <!-- ─────────────────────────────────────────────────────
+             SCROLL — toggle .scrolled on header after 60px
+             so the navbar fades in from transparent.
+        ───────────────────────────────────────────────────── -->
+        <script>
+            (function () {
+                const header = document.querySelector('.l-header');
+                function onScroll() {
+                    if (window.scrollY > 60) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll(); // run once on load in case page is already scrolled
+            })();
+        </script>
+
+        <script>
+            function forceDownload(e, url, filename) {
+                e.preventDefault();
+                fetch(url)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const blobURL = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = blobURL;
+                        a.download = filename;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(blobURL);
+                    })
+                    .catch(() => window.open(url, '_blank'));
+            }
+        </script>
+
+        <!-- ─────────────────────────────────────────────────────
+             NAV OVERLAY — works alongside whatever main.js does.
+             Watches for the .show class on #nav-menu and mirrors
+             it on the overlay div; overlay tap closes everything.
+        ───────────────────────────────────────────────────── -->
+        <script>
+            (function () {
+                const navMenu   = document.getElementById('nav-menu');
+                const navToggle = document.getElementById('nav-toggle');
+                const overlay   = document.getElementById('nav-overlay');
+
+                function closeNav() {
+                    navMenu.classList.remove('show');
+                    overlay.classList.remove('show');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('bx-menu');
+                        icon.classList.remove('bx-x');
+                    }
+                }
+
+                /* Mirror .show on #nav-menu → overlay */
+                const mo = new MutationObserver(() => {
+                    if (navMenu.classList.contains('show')) {
+                        overlay.classList.add('show');
+                    } else {
+                        overlay.classList.remove('show');
+                    }
+                });
+                mo.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
+
+                /* Tap overlay → close */
+                overlay.addEventListener('click', closeNav);
+
+                /* Tap any nav link → close (good UX on mobile) */
+                document.querySelectorAll('.nav__link').forEach(link => {
+                    link.addEventListener('click', closeNav);
+                });
+            })();
+        </script>
+
+        <script>
             function toggleDescription(id, btn) {
                 const desc = document.getElementById(id);
                 const icon = btn.querySelector('i');
-                if (desc.style.display === "none") {
-                    desc.style.display = "block";
-                    icon.className = 'bx bx-up-arrow'; // change icon to up arrow
-                    btn.querySelector('span').innerText = '';
-                } else {
-                    desc.style.display = "none";
-                    icon.className = 'bx bx-down-arrow'; // change icon to down arrow
-                    btn.querySelector('span').innerText = '';
-                }
+                desc.classList.toggle('show-description');
+                icon.classList.toggle('rotate-icon');
             }
-         </script>
-       <script>
+        </script>
+
+        <script>
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -555,16 +667,62 @@
 
             document.querySelectorAll('.cert__card').forEach(card => observer.observe(card));
         </script>
+
         <script>
-            function toggleDescription(id, btn) {
-                const desc = document.getElementById(id);
-                const icon = btn.querySelector('i');
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
 
-                // This handles the smooth slide and visibility
-                desc.classList.toggle('show-description');
-
-                // This handles the arrow rotation
-                icon.classList.toggle('rotate-icon');
+            function resize() {
+                canvas.width  = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
+            window.addEventListener('resize', () => { resize(); init(); });
+            resize();
+
+            class Particle {
+                constructor() { this.reset(true); }
+                reset(randomY = false) {
+                    this.x      = Math.random() * canvas.width;
+                    this.y      = randomY ? Math.random() * canvas.height : canvas.height + 5;
+                    this.size   = Math.random() * 1.8 + 0.4;
+                    this.speedX = (Math.random() - 0.5) * 0.35;
+                    this.speedY = -(Math.random() * 0.45 + 0.1);
+                    this.alpha  = Math.random() * 0.45 + 0.1;
+                    const r = Math.random();
+                    if      (r < 0.22) this.hue = `26,102,255`;
+                    else if (r < 0.40) this.hue = `0,184,230`;
+                    else if (r < 0.65) this.hue = `6,8,16`;
+                    else               this.hue = `13,30,80`;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.alpha -= 0.0003;
+                    if (this.y < -4 || this.alpha <= 0) this.reset();
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.x > canvas.width) this.x = 0;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.hue},${this.alpha})`;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                const n = Math.floor((canvas.width * canvas.height) / 7200);
+                for (let i = 0; i < n; i++) particles.push(new Particle());
+            }
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            init();
+            animate();
         </script>
+    </body>
 </html>
