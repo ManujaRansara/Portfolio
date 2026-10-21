@@ -1,0 +1,53 @@
+
+/* FUTURISTIC BLACK ORBITAL SYSTEM */
+
+#home .home__profile-container {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+}
+
+/* Light, static portrait border */
+#home .home__profile-frame {
+    position: relative;
+    z-index: 2;
+    background: #e5e7eb;
+    filter: none;
+}
+
+#home .profile-gradient {
+    background: #e5e7eb;
+    animation: none !important;
+    filter: none;
+}
+
+#home .profile-inner {
+    background: #ffffff;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+}
+
+/* Expanded transparent canvas for orbital cords */
+#home .profile-cord-canvas {
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    width: 150%;
+    height: 150%;
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.60 !important;
+}
+
+/* Remove old circular HUD decorations */
+#home .hud-ring {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #home .profile-gradient {
+        animation: none !important;
+    }
+}
