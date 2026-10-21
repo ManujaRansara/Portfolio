@@ -704,6 +704,7 @@ body {
   background: rgba(0,0,0,0.02);
   padding: 6px;
   border: 1px solid var(--border-color);
+  margin-right: 10px;
 }
 .skills__names { display: flex; align-items: center; width: 100%; }
 .skills__name  { font-size: 1.05rem; color: var(--text-primary); font-weight: 700; }
