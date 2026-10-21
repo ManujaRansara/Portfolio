@@ -1,0 +1,575 @@
+/* ==========================================================
+   FUTURISTIC LIGHT GEOMETRIC NAVBAR
+   White theme | responsive right-side drawer | no laser sweep
+   Load AFTER styles.css, profile-math-animation.css and
+   scroll-geometry.css.
+========================================================== */
+
+:root {
+  --nav-blue: #2563eb;
+  --nav-cyan: #0891b2;
+  --nav-ink: #0f172a;
+  --nav-text: #334155;
+  --nav-muted: #64748b;
+  --nav-line: rgba(37, 99, 235, 0.15);
+  --nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The header is transparent; the nav itself is the floating white panel. */
+.l-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  padding: 12px clamp(10px, 2vw, 30px) 0 !important;
+  z-index: 1000 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  will-change: auto !important;
+}
+
+/* Remove the old header border effects and all moving laser effects. */
+.l-header::before,
+.l-header::after,
+.nav::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+/* Floating white-glass navbar */
+.nav {
+  position: relative !important;
+  isolation: isolate;
+  width: min(1780px, 100%) !important;
+  max-width: 1780px !important; /* override the legacy .bd-grid 1024px cap */
+  min-height: 70px !important;
+  height: 70px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 2.4vw, 36px) !important;
+  display: grid !important;
+  grid-template-columns: max-content minmax(0, 1fr) !important;
+  align-items: center !important;
+  /* Keep a clearly visible separation between the brand and nav links. */
+  column-gap: clamp(60px, 7vw, 130px) !important;
+  border: 1px solid rgba(37, 99, 235, 0.19) !important;
+  border-radius: 16px !important;
+  background: linear-gradient(110deg, rgba(255,255,255,.98), rgba(248,251,255,.96) 58%, rgba(255,255,255,.98)) !important;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, .065), inset 0 1px 0 rgba(255,255,255,.98) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  backdrop-filter: blur(20px) saturate(140%) !important;
+  overflow: visible !important;
+}
+
+/* Static, low-contrast mathematical grid. No animated light streak. */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, .035) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: .65;
+}
+
+.nav > div {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+/* Logo */
+.nav__logo {
+  display: inline-flex !important;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--nav-ink) !important;
+  font-family: var(--code-font) !important;
+  font-size: clamp(1rem, 1.12vw, 1.2rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -.7px !important;
+  transform-origin: left center;
+  transition:
+    color .45s ease,
+    letter-spacing .72s var(--nav-ease),
+    transform .72s var(--nav-ease) !important;
+}
+
+.nav__logo::before,
+.nav__logo::after {
+  color: var(--nav-cyan) !important;
+  text-shadow: none !important;
+  transition:
+    color .45s ease,
+    margin .72s var(--nav-ease) !important;
+}
+
+.nav__logo:hover {
+  color: var(--nav-blue) !important;
+  letter-spacing: .25px !important;
+  transform: translateY(-1px);
+}
+
+.nav__logo:hover::before { margin-right: 6px !important; }
+.nav__logo:hover::after { margin-left: 6px !important; }
+
+/* ======================== DESKTOP ======================== */
+@media (min-width: 1200px) {
+  .l-header {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .nav {
+    width: min(1780px, 100%) !important;
+    grid-template-columns: max-content minmax(0, 1fr) !important;
+    column-gap: clamp(90px, 8vw, 175px) !important;
+    padding-inline: clamp(28px, 2.8vw, 48px) !important;
+  }
+
+  .nav > div:last-child,
+  .nav__toggle {
+    display: none !important;
+  }
+
+  .nav__menu {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    grid-column: 2;
+    justify-self: end;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    transition: none !important;
+    z-index: auto !important;
+  }
+
+  .nav__menu::before { content: none !important; display: none !important; }
+
+  .nav__list {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(.65rem, 1vw, 1.1rem) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .nav__item {
+    display: block !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .nav__link {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: .68rem .78rem .72rem !important;
+    color: var(--nav-text) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+    font-family: var(--body-font) !important;
+    font-size: clamp(.76rem, .75vw, .88rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+    transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease !important;
+  }
+
+  /* Small geometric dot before every desktop navigation label. */
+  .nav__link::before {
+    content: "" !important;
+    display: inline-block !important;
+    flex: 0 0 5px !important;
+    width: 5px !important;
+    height: 5px !important;
+    margin: 0 .48rem 0 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: var(--nav-cyan) !important;
+    box-shadow: none !important;
+    opacity: 0 !important;
+    transform: scale(.55) !important;
+    transition:
+      transform .35s var(--nav-ease),
+      opacity .35s ease,
+      background .35s ease,
+      box-shadow .35s ease !important;
+  }
+
+  /* The dot marks only the section currently active, not every link or hover. */
+  .nav__link.active-link::before {
+    opacity: 1 !important;
+    background: var(--nav-blue) !important;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .1) !important;
+    transform: scale(1.18) !important;
+  }
+
+  .nav__link::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 4px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 3px !important;
+    background: linear-gradient(90deg, var(--nav-blue), var(--nav-cyan)) !important;
+    box-shadow: none !important;
+    transform: scaleX(0) !important;
+    transform-origin: center !important;
+    opacity: 0 !important;
+    transition: transform .22s ease, opacity .22s ease !important;
+  }
+
+  .nav__link:hover,
+  .nav__link.active-link {
+    color: var(--nav-blue) !important;
+    background: rgba(37, 99, 235, .055) !important;
+    border-color: rgba(37, 99, 235, .10) !important;
+    box-shadow: none !important;
+    transform: translateY(-1px);
+  }
+
+  .nav__link:hover::after,
+  .nav__link.active-link::after {
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Compact desktop widths: retain a logo-to-links gap; switch to drawer if cramped. */
+@media (min-width: 1200px) and (max-width: 1350px) {
+  /* Keep a clearly noticeable logo-to-links gap even on compact desktops. */
+  .nav {
+    column-gap: clamp(82px, 6.8vw, 105px) !important;
+    padding-inline: 24px !important;
+  }
+  .nav__list { gap: .42rem !important; }
+  .nav__link { padding-inline: .42rem !important; font-size: .73rem !important; }
+}
+
+
+@media (max-width: 1199px) {
+  .nav__logo {
+    font-size: clamp(.86rem, 2.6vw, 1rem) !important;
+    transition: color .45s ease, letter-spacing .72s var(--nav-ease), transform .72s var(--nav-ease) !important;
+  }
+
+  .nav__logo:hover {
+    letter-spacing: -.35px !important;
+    transform: none;
+  }
+
+  .nav__logo:hover::before { margin-right: 3px !important; }
+  .nav__logo:hover::after { margin-left: 3px !important; }
+}
+
+/* ===================== TABLET + MOBILE ===================== */
+@media (max-width: 1199px) {
+  .l-header { padding: 10px 12px 0 !important; }
+
+  .nav {
+    width: 100% !important;
+    max-width: none !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    padding: 0 12px 0 18px !important;
+    border-radius: 14px !important;
+    overflow: visible !important;
+  }
+
+  .nav > div:first-child { flex: 1 1 auto; min-width: 0; }
+
+  .nav__logo {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(.78rem, 2.5vw, .98rem) !important;
+  }
+
+  .nav__toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    position: relative !important;
+    z-index: 1002 !important;
+    color: var(--nav-blue) !important;
+    background: #f5f8ff !important;
+    border: 1px solid rgba(37, 99, 235, .22) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    cursor: pointer;
+  }
+
+  .nav__toggle i { display: block; font-size: 1.45rem; line-height: 1; }
+  .nav__toggle::before,
+  .nav__toggle::after { content: none !important; display: none !important; }
+  .nav__toggle:hover { color: var(--nav-blue) !important; background: #edf3ff !important; transform: none !important; }
+
+  /* Centered mobile navigation panel. All seven links are visible in one panel. */
+  .nav__menu,
+  #nav-menu {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: block !important;
+    width: min(380px, calc(100vw - 28px)) !important;
+    height: auto !important;
+    max-height: calc(100vh - 40px) !important;
+    max-height: calc(100dvh - 40px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 16px 12px 14px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translate(-50%, -47%) scale(.96) !important;
+    transform-origin: center center !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(37, 99, 235, .16) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, .15) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 1001 !important;
+    transition: transform .3s var(--nav-ease), opacity .22s ease, visibility 0s linear .3s !important;
+    background-image: linear-gradient(145deg, rgba(239, 246, 255, .42), transparent 52%) !important;
+  }
+
+  .nav__menu.show,
+  #nav-menu.show {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    transition: transform .3s var(--nav-ease), opacity .22s ease, visibility 0s !important;
+  }
+
+  .nav__menu::before,
+  #nav-menu::before {
+    display: block !important;
+    margin: 0 5px 10px !important;
+    padding: 0 0 11px !important;
+    color: var(--nav-blue) !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(37, 99, 235, .13) !important;
+    font-family: var(--code-font) !important;
+    font-size: .65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.8px !important;
+    text-align: center !important;
+  }
+
+  .nav__menu .nav__list,
+  #nav-menu .nav__list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .nav__menu .nav__item,
+  #nav-menu .nav__item {
+    display: block !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .nav__menu .nav__link,
+  #nav-menu .nav__link {
+    display: flex !important;
+    position: relative !important;
+    align-items: center !important;
+    /* Keep each navigation label centered in the panel. */
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 10px 12px !important;
+    color: var(--nav-text) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(37, 99, 235, .075) !important;
+    border-radius: 9px !important;
+    box-shadow: none !important;
+    font-family: var(--body-font) !important;
+    font-size: .92rem !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    transform: none !important;
+    transition: color .18s ease, background .18s ease, border-color .18s ease !important;
+  }
+
+  .nav__menu .nav__link::before,
+  #nav-menu .nav__link::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 18px !important;
+    top: 50% !important;
+    display: inline-block !important;
+    width: 6px !important;
+    height: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none !important;
+    border: 0 !important;
+    border-radius: 2px !important;
+    background: var(--nav-cyan) !important;
+    box-shadow: none !important;
+    opacity: .85 !important;
+    transform: translateY(-50%) rotate(45deg) !important;
+  }
+
+  .nav__menu .nav__link::after,
+  #nav-menu .nav__link::after {
+    content: "" !important;
+    display: none !important;
+  }
+
+  .nav__menu .nav__link:hover,
+  .nav__menu .nav__link.active-link,
+  #nav-menu .nav__link:hover,
+  #nav-menu .nav__link.active-link {
+    color: var(--nav-blue) !important;
+    background: #f2f6ff !important;
+    border-color: rgba(37, 99, 235, .18) !important;
+    box-shadow: inset 3px 0 0 var(--nav-blue) !important;
+    transform: none !important;
+  }
+
+  /* Overlay stays behind the drawer but dims the page around it. */
+  .nav__overlay {
+    display: none !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 999 !important;
+    background: rgba(15, 23, 42, .22) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+    backdrop-filter: blur(2px) !important;
+  }
+
+  .nav__overlay.show { display: block !important; }
+}
+
+@media (max-width: 380px) {
+  .l-header { padding-inline: 8px !important; }
+  .nav { padding-left: 11px !important; padding-right: 9px !important; gap: 8px !important; }
+  .nav__logo { font-size: .75rem !important; letter-spacing: -.55px !important; }
+  .nav__toggle { flex-basis: 38px !important; width: 38px !important; height: 38px !important; }
+  .nav__menu,
+  #nav-menu {
+    width: calc(100vw - 24px) !important;
+    left: 50% !important;
+    right: auto !important;
+    max-height: calc(100dvh - 28px) !important;
+  }
+  .nav__menu.show,
+  #nav-menu.show { left: 50% !important; right: auto !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__logo,
+  .nav__link,
+  .nav__toggle,
+  .nav__menu { transition: none !important; }
+}
+
+@media (max-width: 1199px) {
+  body > #nav-menu,
+  body > .nav__menu {
+    position: fixed !important;
+    top: 50vh !important;
+    top: 50dvh !important;
+    left: 50vw !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(380px, calc(100vw - 28px)) !important;
+    height: auto !important;
+    max-height: calc(100vh - 40px) !important;
+    max-height: calc(100dvh - 40px) !important;
+    margin: 0 !important;
+    transform: translate(-50%, -47%) scale(.96) !important;
+    transform-origin: center center !important;
+    z-index: 10001 !important;
+  }
+
+  body > #nav-menu.show,
+  body > .nav__menu.show {
+    top: 50vh !important;
+    top: 50dvh !important;
+    left: 50vw !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+
+  .nav__overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999 !important;
+  }
+}

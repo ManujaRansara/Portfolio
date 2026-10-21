@@ -1,751 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="d6D4u6z10vPMavfEcE9CgXJbNuI3XbkEoOSJKkxyjIQ" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="d6D4u6z10vPMavfEcE9CgXJbNuI3XbkEoOSJKkxyjIQ">
+    <meta name="description" content="Portfolio of Manuja Hapuarachchi, Computer Science graduate focused on Software Quality Engineering, performance testing, automation, and software engineering.">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/profile-math-animation.css">
+    <!-- New animation styles: load after the existing stylesheets. -->
+    <link rel="stylesheet" href="assets/css/scroll-geometry.css">
+    <link rel="stylesheet" href="assets/css/navbar-geometry.css">
 
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-        <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-        <link rel="manifest" href="assets/img/site.webmanifest">
-        <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Manuja Hapuarachchi",
-        "url": "https://manujaransara.github.io/",
-        "jobTitle": "Software Quality Engineer",
-        "sameAs": [
-            "https://www.linkedin.com/in/YOUR-LINKEDIN/",
-            "https://github.com/YOUR-GITHUB/"
-        ]
-        }
-        </script>
-        <title>Manuja Hapuarachchi</title>
-    </head>
-    <body>
-        <div class="sun-glow"></div> 
-        <canvas id="particle-canvas"></canvas>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <header class="l-header">
-            <nav class="nav bd-grid">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manuja Hapuarachchi",
+      "url": "https://manujaransara.github.io/Portfolio/",
+      "jobTitle": "Software Quality Engineer",
+      "sameAs": [
+        "https://www.linkedin.com/in/manujahapuarachchi/",
+        "https://github.com/ManujaRansara"
+      ]
+    }
+    </script>
+    <title>Manuja Hapuarachchi</title>
+</head>
+<body>
+    <div class="sun-glow" aria-hidden="true"></div>
+    <!-- The new animation script draws geometry and snow on this existing canvas. -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div><a href="#home" class="nav__logo">Manuja Hapuarachchi</a></div> 
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Education</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Experience</a></li>
+                    <li class="nav__item"><a href="#Projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
+                    <li class="nav__item"><a href="#sports" class="nav__link">Sports</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" role="button" tabindex="0">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="nav__overlay" id="nav-overlay"></div>
+
+    <main class="l-main">
+        <section class="home bd-grid" id="home">
+            <div class="home__img">
+                <div class="home__profile-container">
+                    <div class="hud-ring hud-ring-1" aria-hidden="true"></div>
+                    <div class="hud-ring hud-ring-2" aria-hidden="true"></div>
+                    <div class="hud-ring hud-ring-3" aria-hidden="true"></div>
+                    <div class="home__profile-frame">
+                        <div class="profile-gradient" aria-hidden="true"></div>
+                        <div class="profile-inner">
+                            <img id="profile-photo" src="assets/img/perfil.png" alt="Manuja Hapuarachchi profile photo" class="home__profile-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__data">
+                <h1 class="home__title"><span id="typewriter"></span></h1>
+                <a href="assets/cv/Manuja Hapuarachchi.pdf"
+                   class="button"
+                   onclick="forceDownload(event, 'assets/cv/Manuja Hapuarachchi.pdf', 'Manuja Hapuarachchi.pdf')"
+                   download="Manuja Hapuarachchi.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="bx bx-download" style="font-size:20px"></i>&nbsp;&nbsp;&nbsp;Download CV
+                </a>
+            </div>
+
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/manujahapuarachchi/" class="home__social-icon" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/ManujaRansara" class="home__social-icon" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="home__social-icon" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                <a href="mailto:hapuarachchiransara@gmail.com" class="home__social-icon" aria-label="Email"><i class="bx bx-envelope" style="font-size:30px"></i></a>
+                <a href="tel:+94789885199" class="home__social-icon" aria-label="Phone"><i class="bx bx-phone" style="font-size:30px"></i></a>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img"><img src="assets/img/about.jpg" alt="Manuja Hapuarachchi"></div>
                 <div>
-                    <a href="#" class="nav__logo">Manuja Hapuarachchi</a>
+                    <h2 class="about__subtitle">I'm Manuja Hapuarachchi.</h2>
+                    <p class="about__text">I am a Computer Science graduate from UCSC with a dedicated focus on Software Engineering, Quality Engineering, DevOps, and Cloud Computing. Driven by a strong interest in software architecture, I enjoy deconstructing complex systems to understand how they are built, tested, and maintained at scale. I am committed to continuous learning and actively seek out new challenges to strengthen my technical and problem-solving abilities.</p>
                 </div>
-              
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Education</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Experience</a></li>
-                        <li class="nav__item"><a href="#Projects" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
-                        <li class="nav__item"><a href="#sports" class="nav__link">Sports</a></li>
-                    </ul>
-                </div>
+            </div>
+        </section>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+        <section class="skills section" id="skills">
+            <div class="Education">
+                <h2 class="section-title">Education</h2>
 
-        <!-- Mobile nav overlay (dark scrim behind the slide-in menu) -->
-        <div class="nav__overlay" id="nav-overlay"></div>
-
-        <main class="l-main">
-            <section class="home bd-grid" id="home">
-                <!-- Futuristic Profile Image Setup -->
-                <div class="home__img">
-                    <div class="home__profile-container">
-                        <!-- Orbiting HUD Rings -->
-                        <div class="hud-ring hud-ring-1"></div>
-                        <div class="hud-ring hud-ring-2"></div>
-                        <div class="hud-ring hud-ring-3"></div>
-                        
-                        <!-- Main Geometric Frame -->
-                        <div class="home__profile-frame">
-                            <!-- Animated border glow -->
-                            <div class="profile-gradient"></div>
-                            <!-- Image wrapper to create the cut-out border effect -->
-                            <div class="profile-inner">
-                                <img src="assets/img/perfil.png" alt="Profile" class="home__profile-img">
-                            </div>
-                        </div>
+                <div class="skills__data">
+                    <div><span class="skills__date">Aug 2026 – Present</span></div><br>
+                    <div class="skills__names">
+                        <img src="assets/img/usj.jpg" alt="University of Sri Jayewardenepura" class="skills__icon-img">
+                        <span class="skills__name">&nbsp;&nbsp;&nbsp;&nbsp;University of Sri Jayewardenepura</span>
+                    </div><br>
+                    <div class="education__details">
+                        <div class="education__degree">MSc in Computer Science (Reading)</div>
                     </div>
+                    <div class="skills__bar skills__html"></div>
                 </div>
 
-                <div class="home__data">
-                    <h1 class="home__title"><span id="typewriter"></span></h1>
-
-                    <!--
-                      Download CV — target="_blank" ensures iOS Safari opens the PDF
-                      in its viewer (download attr alone is ignored on iOS).
-                    -->
-                    <a href="assets/cv/Manuja Hapuarachchi.pdf"
-                       class="button"
-                       onclick="forceDownload(event, 'assets/cv/Manuja Hapuarachchi.pdf', 'Manuja Hapuarachchi.pdf')"
-                       download="Manuja Hapuarachchi.pdf"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <i class="bx bx-download" style="font-size:20px;"></i>&nbsp; &nbsp;&nbsp;Download CV
-                    </a>
-                </div>
-
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/manujahapuarachchi/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/ManujaRansara" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                    <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="home__social-icon"><i class="fab fa-hackerrank"></i></a>
-                    <a href="mailto:hapuarachchiransara@gmail.com" class="home__social-icon">
-                       <i class='bx bx-envelope' style="font-size:30px; "></i>
-                    </a>
-                    <a href="tel:+94789885199" class="home__social-icon">
-                        <i class='bx bx-phone' style="font-size:30px; "></i>
-                    </a>
-                </div>
-            </section>
-
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="">
+                <div class="skills__data">
+                    <div><span class="skills__date">May 2023 – Aug 2026</span></div><br>
+                    <div class="skills__names">
+                        <img src="assets/img/university.png" alt="University of Colombo School of Computing" class="skills__icon-img">
+                        <span class="skills__name">&nbsp;&nbsp;&nbsp;&nbsp; University of Colombo School of Computing</span>
+                    </div><br>
+                    <div class="education__details">
+                        <div class="education__degree">BSc in Computer Science (Second Upper Class)</div>
+                        <div class="education__note">Overall GPA: 3.47</div>
                     </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'm Manuja Hapuarachchi.</h2>
-                        <p class="about__text">
-                            I am a Computer Science undergraduate at UCSC with a dedicated focus on Software Engineering, Quality Engineering, DevOps, and Cloud Computing. 
-                            Driven by a strong interest in software architecture, I excel at deconstructing complex systems to understand how they are built, tested, and maintained at scale. 
-                            I am committed to continuous learning and actively seek out new challenges to elevate my technical and problem-solving abilities.  </div>                                  
+                    <div class="skills__bar skills__html"></div>
                 </div>
-            </section>
 
-            <section class="skills section" id="skills">
-                <div class="Education" >
-                <h2 class="section-title"  >Education</h2>
-                    
-                        <h2 class="skills__subtitle"></h2>
-                        <div class="skills__data">
-                            <div><span class="skills__date"> May 2023 – Present</span>  </div>   <br>
-                            <div class="skills__names">
-                                <img src="assets/img/university.png" alt="UCSC" class="skills__icon-img"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class="skills__name">University of Colombo School of Computing - Colombo</span>
-                            </div> <br>
-                            <div style="font-size: 0.95rem; color: #484848; line-height: 1.6; margin-top: 6px;">
-                              <div>
-                                <div style=" font-weight: 600;">
-                                    BSc in Computer Science 
-                                </div>
-                                <div style="margin-left: 14px; font-size: 0.88rem; color: #777; font-style: italic;">
-                                    <span>Overall GPA: 3.47</span>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div class="skills__bar skills__html"></div>
-                            <div></div>
-                        </div>
-                        <div class="skills__data">
-                            <div><span class="skills__date"> Mar 2013 – Dec 2022</span>  </div>   <br>
-                            <div class="skills__names">
-                                <img src="assets/img/school.jpg" alt="UCSC" class="skills__icon-img"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class="skills__name">Taxila Central College - Horana</span>
-                            </div> <br>
-                            <div style="font-size: 0.95rem; color: #484848; line-height: 1.6; margin-top: 6px;">
-                                 <div style="margin-bottom: 14px;">
-                                    <div style=" font-weight: 600;">
-                                        G.C.E. Advanced Level (Physical Science)
-                                    </div>
-                                    <div style="margin-left: 14px; font-size: 0.88rem; color: #777; font-style: italic;">
-                                        <span>Results: 1A , 2B </span>
-                                        <span style="margin-left: 12px;">Z-Score: 1.6342</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div style=" font-weight: 600;">
-                                        G.C.E. Ordinary Level
-                                    </div>
-                                    <div style="margin-left: 14px; font-size: 0.88rem; color: #777; font-style: italic;">
-                                        <span>Results: 9A </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__bar skills__css"></div>
-                            <div></div>
-                        </div>
-                    
+                <div class="skills__data">
+                    <div><span class="skills__date">Mar 2013 – Dec 2022</span></div><br>
+                    <div class="skills__names">
+                        <img src="assets/img/school.jpg" alt="Taxila Central College" class="skills__icon-img">
+                        <span class="skills__name">&nbsp;&nbsp;&nbsp;&nbsp;Taxila Central College – Horana</span>
+                    </div><br>
+                    <div class="education__details education__school">
+                        <div class="education__degree">G.C.E. Advanced Level (Physical Science)</div>
+                        <div class="education__note">Results: 1A, 2B <span class="education__separator">Z-Score: 1.6342</span></div>
+                        <div class="education__degree education__degree--spaced">G.C.E. Ordinary Level</div>
+                        <div class="education__note">Results: 9A</div>
                     </div>
-              
-            </section>
+                    <div class="skills__bar skills__css"></div>
+                </div>
+            </div>
+        </section>
 
-            <section class="work section" id="work">
-                <div class="Education" >
+        <section class="work section" id="work">
+            <div class="Education">
                 <h2 class="section-title">Experience</h2>
-                   <div class="skills__data">
-                            <div><span class="skills__date"> Nov 2025 – May 2026</span>  </div>   <br> <br>
-                          <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                                <img src="assets/img/pickme.jpg" alt="PickMe" class="skills__icon-img"> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class="skills__name">PickMe (Onsite) - Colombo</span>
-
-                                <button onclick="toggleDescription('pickmeDesc', this)" 
-                                        style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                                    <i class='bx bx-down-arrow'></i>
-                                </button>
-                            </div> <br>
-
-                            <div style="font-size: 0.95rem; color: #343434; line-height: 1.6; margin-top: 6px; margin-left: 14px;">
-                                <div style="font-weight: 600; font-style: italic;">
-                                    Software Quality Engineering Intern (Performance and Automation)
-                                </div>
-                            </div>
-
-                            <div id="pickmeDesc" class="project__description">
-                                <div class="project__description-content">
-                                    Worked within the Performance Engineering team focusing on performance testing and test automation. My responsibilities include:
-                                          <br>
-                                    <br>• Developed automated solutions to transform traditional manual performance profiling  for Android applications.
-                                    <br>  &nbsp;&nbsp; Skills: ADB , Appium , Docker , Gitlab CI/CD , Python  <br>
-                                    <br>• Intiated PickMe Release Tracker Project.
-                                    <br>  &nbsp;&nbsp; Skills: Java Springboot, React , PostgreSQL, Multi-tier Architecture  <br>
-                                    <br>• Executed performance test scripts and monitoring.
-                                    <br>   &nbsp; &nbsp;Skills: JMeter , Grafana , Gitlab CI/CD , EMQX benchmarking tool <br>
-                                    <br>• Did manual performance profiling .
-                                    <br>   &nbsp;&nbsp; Skills: Android Studio Profiler, Xcode Instruments  <br>
-                                    <br>• Learnings from Automation Sessions.
-                                    <br>    &nbsp;&nbsp; Skills: Appium , Gauge Framework , App Automation , API automation , Postman  <br>
-                                    <br>• Collaborating with developers to ensure high-quality software releases.
-                                    <br>    &nbsp;&nbsp; Skills: Communication <br>
-                                </div>
-                            </div>
-
-                            <div class="skills__bar skills__html"></div>
-                            <div></div>
+                <div class="skills__data">
+                    <div><span class="skills__date">Nov 2025 – May 2026</span></div><br><br>
+                    <div class="skills__names experience__heading">
+                        <img src="assets/img/pickme.jpg" alt="PickMe" class="skills__icon-img">
+                        <span class="skills__name">PickMe (Onsite) – Colombo</span>
+                        <button class="description-toggle" onclick="toggleDescription('pickmeDesc', this)" aria-label="Toggle PickMe experience details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
+                    </div><br>
+                    <div class="experience__role">Software Quality Engineering Intern (Performance and Automation)</div>
+                    <div id="pickmeDesc" class="project__description">
+                        <div class="project__description-content">
+                            Worked within the Performance Engineering team focusing on performance testing and test automation. Responsibilities included:
+                            <br><br>• Developed automated solutions to transform traditional manual performance profiling for Android applications.<br>
+                            &nbsp;&nbsp;Skills: ADB, Appium, Docker, GitLab CI/CD, Python<br>
+                            <br>• Initiated the PickMe Release Tracker project.<br>
+                            &nbsp;&nbsp;Skills: Java Spring Boot, React, PostgreSQL, multi-tier architecture<br>
+                            <br>• Executed performance test scripts and monitoring.<br>
+                            &nbsp;&nbsp;Skills: JMeter, Grafana, GitLab CI/CD, EMQX benchmarking tool<br>
+                            <br>• Conducted manual performance profiling.<br>
+                            &nbsp;&nbsp;Skills: Android Studio Profiler, Xcode Instruments<br>
+                            <br>• Participated in automation learning sessions.<br>
+                            &nbsp;&nbsp;Skills: Appium, Gauge Framework, app automation, API automation, Postman<br>
+                            <br>• Collaborated with developers to support high-quality software releases.<br>
+                            &nbsp;&nbsp;Skills: Communication
                         </div>
                     </div>
-                
+                    <div class="skills__bar skills__html"></div>
+                </div>
             </div>
-            </section>
+        </section>
 
-                <section class="work section" id="Projects">
-                <div class="Education" >
+        <section class="work section" id="Projects">
+            <div class="Education">
                 <h2 class="section-title">Projects</h2>
-                <div class="skills__data" style="margin-bottom: 20px;">
 
+                <div class="skills__data project-card">
                     <div><span class="skills__date">Jan 2026 – May 2026</span></div><br><br>
-
-                    <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                        <img src="assets/img/pickme.jpg" alt="PickMe" class="skills__icon-img"> 
-                        <span class="skills__name" style="font-weight: 600;">PickMe Release Tracker</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        
-                        <button onclick="toggleDescription('PickMeDesc', this)" 
-                                style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                            <i class='bx bx-down-arrow'></i>
-                        </button>
+                    <div class="skills__names project__heading">
+                        <img src="assets/img/pickme.jpg" alt="PickMe" class="skills__icon-img">
+                        <span class="skills__name project__title">PickMe Release Tracker</span>
+                        <button class="description-toggle" onclick="toggleDescription('PickMeDesc', this)" aria-label="Toggle Release Tracker details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
                     </div><br>
-
-                    <div style="margin-left: 14px; font-size: 0.88rem; color: #3a3939; font-style: italic;">
-                        <strong>Technologies:</strong> Java Spring Boot, PostgreSQL,React  <br>
-                        <strong>Architecture:</strong> Multi-tier Architecture 
-                    </div> <br>
-
-                    <div id="PickMeDesc" class="project__description">
-                       <div class="project__description-content">
-                            Implemented using Java Spring Boot, React, and PostgreSQL, PickMe Release Tracker tracks the progress of 100+
-                            monthly releases. It can create any team and register them to the new monthly release, improving coordination
-                            by 40%. Release Tracker evaluates each team's performance for new releases using JIRA tickets, saving  5+ hours
-                            of manual work. It also shows exactly what versions are currently in production for all 4+ apps.
-                      </div>   
-                  </div>
-                       <div class="skills__bar skills__html">
-
-                            </div>
-
+                    <div class="project__meta"><strong>Technologies:</strong> Java Spring Boot, PostgreSQL, React<br><strong>Architecture:</strong> Multi-tier architecture</div><br>
+                    <div id="PickMeDesc" class="project__description"><div class="project__description-content">Implemented using Java Spring Boot, React, and PostgreSQL, PickMe Release Tracker tracks the progress of 100+ monthly releases. It supports team creation and registration for monthly releases, improving coordination by 40%. It evaluates each team's release performance using Jira tickets, saving 5+ hours of manual work, and displays the production versions for 4+ applications.</div></div>
+                    <div class="skills__bar skills__html"></div>
                 </div>
-               <div class="skills__data" style="margin-bottom: 20px;">
 
+                <div class="skills__data project-card">
                     <div><span class="skills__date">May 2025 – Oct 2025</span></div><br><br>
-
-                    <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                        <img src="assets/img/farmio.png" alt="Farmio" 
-                            style="width: 120px; height: 46px; object-fit: contain;">
-                        <span class="skills__name" style="font-weight: 600;">Farmio</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://github.com/ManujaRansara/Farmio" target="_blank" 
-                        class="home__social-icon"><i class='bx bxl-github'></i></a>
-                        
-                        <button onclick="toggleDescription('farmioDesc', this)" 
-                                style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                            <i class='bx bx-down-arrow'></i>
-                        </button>
+                    <div class="skills__names project__heading">
+                        <img src="assets/img/farmio.png" alt="Farmio" class="project__logo project__logo--farmio">
+                        <span class="skills__name project__title">Farmio</span>
+                        <a href="https://github.com/ManujaRansara/Farmio" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Farmio GitHub"><i class="bx bxl-github"></i></a>
+                        <button class="description-toggle" onclick="toggleDescription('farmioDesc', this)" aria-label="Toggle Farmio details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
                     </div><br>
-
-                    <div style="margin-left: 14px; font-size: 0.88rem; color: #3a3939; font-style: italic;">
-                        <strong>Technologies:</strong> Java Spring Boot, Microservices, REST APIs, PostgreSQL, React  <br>
-                        <strong>Architecture:</strong> Microservices Architecture
-                    </div> <br>
-
-                    <div id="farmioDesc" class="project__description">
-                       <div class="project__description-content">
-                        Farmio is a comprehensive smart agriculture platform connecting farmers, warehouse owners, transport providers, waste management agents, and customers. It addresses inefficiencies in the agricultural supply chain, ensuring seamless product distribution, transparent logistics, and effective waste management.
-                        I contributed to designing and implementing microservices for inventory management, order tracking, and delivery coordination, enabling scalable, maintainable, and robust system architecture. This project enhanced my skills in full-stack development, distributed systems, and collaboration across multiple stakeholders.
-                      </div>   
-                  </div>
-                       <div class="skills__bar skills__html">
-
-                            </div>
-
+                    <div class="project__meta"><strong>Technologies:</strong> Java Spring Boot, microservices, REST APIs, PostgreSQL, React<br><strong>Architecture:</strong> Microservices architecture</div><br>
+                    <div id="farmioDesc" class="project__description"><div class="project__description-content">Farmio is a smart agriculture platform connecting farmers, warehouse owners, transport providers, waste-management agents, and customers. It addresses agricultural supply-chain inefficiencies by supporting product distribution, logistics transparency, and waste management. I contributed to microservices for inventory management, order tracking, and delivery coordination, strengthening my experience with full-stack development and distributed systems.</div></div>
+                    <div class="skills__bar skills__html"></div>
                 </div>
-             
-                     <div class="skills__data" style="margin-bottom: 20px;">
 
-                        <div><span class="skills__date">May 2024 – May 2025</span></div><br><br>
+                <div class="skills__data project-card">
+                    <div><span class="skills__date">May 2024 – May 2025</span></div><br><br>
+                    <div class="skills__names project__heading">
+                        <img src="assets/img/Parlimate.jpg" alt="Parlimate" class="project__logo">
+                        <span class="skills__name project__title">Parlimate</span>
+                        <a href="https://github.com/pehanransika/Parlimate-Project" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Parlimate GitHub"><i class="bx bxl-github"></i></a>
+                        <button class="description-toggle" onclick="toggleDescription('parlimateDesc', this)" aria-label="Toggle Parlimate details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
+                    </div><br>
+                    <div class="project__meta"><strong>Technologies:</strong> Java Servlets, PostgreSQL, HTML, CSS, JavaScript, Tomcat, IntelliJ<br><strong>Architecture:</strong> MVC architecture</div><br>
+                    <div id="parlimateDesc" class="project__description"><div class="project__description-content">Parlimate is a digital platform connecting politicians, citizens, and political parties to enhance transparency, engagement, and participation in civic processes. Citizens can participate in surveys, view politician profiles, comment on posts, and engage in fundraising projects. Politicians can share announcements and interact with constituents, while parties can recruit politicians and manage party activities.</div></div>
+                    <div class="skills__bar skills__html"></div>
+                </div>
 
-                        <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                            <img src="assets/img/Parlimate.jpg" alt="Parlimate" 
-                                style="width: 120px; height: 46px; object-fit: contain;">
-                            <span class="skills__name" style="font-weight: 600;">Parlimate</span> &nbsp;
-                            <a href="https://github.com/pehanransika/Parlimate-Project" target="_blank" 
-                            class="home__social-icon"><i class='bx bxl-github'></i></a>
-                            
-                            <button onclick="toggleDescription('parlimateDesc', this)" 
-                                    style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                                <i class='bx bx-down-arrow'></i>
-                            </button>
-                        </div><br>
+                <div class="skills__data project-card">
+                    <div><span class="skills__date">Jul 2025 – Aug 2025</span></div><br><br>
+                    <div class="skills__names project__heading">
+                        <img src="assets/img/convo.png" alt="Convo" class="project__logo project__logo--convo">
+                        <span class="skills__name project__title">Convo</span>
+                        <a href="https://github.com/ManujaRansara/Convo" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Convo GitHub"><i class="bx bxl-github"></i></a>
+                        <button class="description-toggle" onclick="toggleDescription('convoDesc', this)" aria-label="Toggle Convo details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
+                    </div><br>
+                    <div class="project__meta"><strong>Technologies:</strong> Flutter, Kotlin, Firebase Database, Dart, Figma</div><br>
+                    <div id="convoDesc" class="project__description"><div class="project__description-content">Convo is a lightweight cross-platform mobile messaging application designed for one-to-one communication. Built using Flutter and Firebase for real-time messaging and authentication, it supports text-based conversations over the internet. QR-code-based device pairing helps two users establish a chat session without manual configuration.</div></div>
+                    <div class="skills__bar skills__html"></div>
+                </div>
 
-                        <div style="margin-left: 14px; font-size: 0.88rem; color:  #3a3939; font-style: italic;">
-                            <strong>Technologies:</strong> Java Servlets, PostgreSQL, HTML, CSS, Javascript, Tom cat , Intellij<br>
-                            <strong>Architecture:</strong> MVC Architecture
-                        </div> <br>
-
-                        <div id="parlimateDesc" class="project__description">
-                          <div class="project__description-content">
-                            Parlimate is a digital platform connecting politicians, citizens, and political parties, designed to enhance transparency, engagement, and participation in civic processes. It solves challenges such as limited communication between citizens and politicians, fragmented political information, and lack of structured feedback mechanisms.
-                            The platform allows citizens to participate in surveys, view politicians' profiles, comment on posts, and engage in fundraising projects, while enabling politicians to share announcements, join political parties, and interact with constituents. Political parties can recruit politicians and manage party activities efficiently.
-                         </div>   
-                        </div>
-                           <div class="skills__bar skills__html">
-
-                            </div>
-
-                    </div>
-
-                    <div class="skills__data" style="margin-bottom: 20px;">
-
-                        <div><span class="skills__date">Jul 2025 – Aug 2025</span></div><br><br>
-
-                        <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                            <img src="assets/img/convo.png" alt="Convo" 
-                                style="width: 120px; height: 90px; object-fit: contain;">
-                            <span class="skills__name" style="font-weight: 600;">Convo</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="https://github.com/ManujaRansara/Convo" target="_blank" 
-                            class="home__social-icon"><i class='bx bxl-github'></i></a>
-                            
-                            <button onclick="toggleDescription('convoDesc', this)" 
-                                    style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                                <i class='bx bx-down-arrow'></i>
-                            </button>
-                        </div><br>
-
-                        <div style="margin-left: 14px; font-size: 0.88rem; color:  #3a3939; font-style: italic;">
-                            <strong>Technologies:</strong> Flutter , Kotlin , Firebase Database , Dart , Figma<br>
-                        </div> <br>
-
-                        <div id="convoDesc" class="project__description">
-                          <div class="project__description-content">  
-                               The Convo is a lightweight, user friendly mobile messaging application designed for seamless one to one communication. Built using Flutter for cross platform development and Firebase for real time messaging and authentication, the app enables fast, reliable text based conversations over the internet.
-                               A key feature of The Convo is QR code based device pairing, which allows two users to establish a secure chat session instantly without manual configuration. This approach makes the connection process simple, intuitive, and secure.                
-                         </div>  
-                     </div>
-                           <div class="skills__bar skills__html">
-
-                            </div>
-
-                    </div>                      
-
-                    <div class="skills__data" style="margin-bottom: 20px;">
-
-                        <div><span class="skills__date">  Oct 2023 – Jan 2024  </span></div><br><br>
-
-                        <div class="skills__names" style="display: flex; align-items: center; gap: 12px;">
-                            <img src="assets/img/Ceyact.jpg" alt="Convo" 
-                                style="width: 120px; height: 50px; object-fit: contain;">
-                            <span class="skills__name" style="font-weight: 600;">Ceyact</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="https://github.com/ManujaRansara/Ceyact-social-media-platform" target="_blank" 
-                            class="home__social-icon"><i class='bx bxl-github'></i></a>
-                            
-                            <button onclick="toggleDescription('ceyactDesc', this)" 
-                                    style="margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 4px;">
-                                <i class='bx bx-down-arrow'></i>
-                            </button>
-                        </div><br>
-
-                        <div style="margin-left: 14px; font-size: 0.88rem; color:  #3a3939; font-style: italic;">
-                            <strong>Technologies:</strong> HTML , CSS , Javascript , PHP , MySQL , Xamp , VS code<br>
-                        </div> <br>
-
-                        <div id="ceyactDesc" class="project__description">
-                          <div class="project__description-content"> 
-                             Ceyact is a social networking platform designed to enable users to create personalized profiles and interact with others in a dynamic and engaging digital environment. The platform provides core social media functionalities, including creating and sharing posts, following other users, reacting to content, and engaging through interactive features.  </div>
-                          </div>  
-                          <div class="skills__bar skills__html">
-
-                            </div>
-
-                    </div>     
-                     
-                    </div>
-                
+                <div class="skills__data project-card">
+                    <div><span class="skills__date">Oct 2023 – Jan 2024</span></div><br><br>
+                    <div class="skills__names project__heading">
+                        <img src="assets/img/Ceyact.jpg" alt="Ceyact" class="project__logo">
+                        <span class="skills__name project__title">Ceyact</span>
+                        <a href="https://github.com/ManujaRansara/Ceyact-social-media-platform" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Ceyact GitHub"><i class="bx bxl-github"></i></a>
+                        <button class="description-toggle" onclick="toggleDescription('ceyactDesc', this)" aria-label="Toggle Ceyact details" aria-expanded="false"><i class="bx bx-down-arrow"></i></button>
+                    </div><br>
+                    <div class="project__meta"><strong>Technologies:</strong> HTML, CSS, JavaScript, PHP, MySQL, XAMPP, VS Code</div><br>
+                    <div id="ceyactDesc" class="project__description"><div class="project__description-content">Ceyact is a social networking platform that enables users to create profiles and interact in a digital environment. Its features include creating and sharing posts, following users, reacting to content, and interacting with other members.</div></div>
+                    <div class="skills__bar skills__html"></div>
+                </div>
             </div>
-            </section>
+        </section>
 
-                 <section class="work section" id="certifications">
-                <div class="Education" >
+        <section class="work section" id="certifications">
+            <div class="Education">
                 <h2 class="section-title">Certifications</h2>
-                     <div class="cert__container">
-                        <a  href="assets/img/ISTQBCertificate.pdf" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Foundation Level Certified Tester Exam</h3>
-                                <span class="cert__issuer">ISTQB</span>
-                            </div>
-                            
-                            <img src="assets/img/ISTQBCertificate.png" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__result">Result: 39/40 </div>
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/learning/certificates/facea646eee6e0789a611946167c924fb71f7b3de9b5732acc6c5e974d46afd3?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B6LsfaFZrQea8TED%2FJI8%2B1g%3D%3D" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Complete Guide to Java Design Patterns </h3>
-                                <span class="cert__issuer">LinkedIn</span>
-                            </div>
-                            
-                            <img src="assets/img/design patterns certificate.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-
-                        <a href="https://www.linkedin.com/learning/certificates/b08c67aecd542d24cbd41d4d2b72a3b752bda56b1d526b9956118d01b7ee1cfb?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B6LsfaFZrQea8TED%2FJI8%2B1g%3D%3D" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Java Object-Oriented Programming</h3>
-                                <span class="cert__issuer">LinkedIn</span>
-                            </div>
-                            <img src="assets/img/Java object oriented programming certificate.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/learning/certificates/7180799507aafb7ed25e903dec8b5a3d521913d4f532baed89dfd589ececa568?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BcpQGyiQOSSeN5fligNv7VQ%3D%3D" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Machine Learning Foundations: Statistics</h3>
-                                <span class="cert__issuer">LinkedIn</span>
-                            </div>
-                            <img src="assets/img/Machine Learning certificate.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/4a57019deca75652cdecd26b2e796a9353de4bb2ecd1a5414392a8006032c7d7?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BuW9qlZaVRBuBcorG5shDEg%3D%3D" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Deep Learning: Getting Started</h3>
-                                <span class="cert__issuer">LinkedIn</span>
-                            </div>
-                            <img src="assets/img/Deep Learning.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                         <a href="assets/img/python .pdf" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Python for Beginners</h3>
-                                <span class="cert__issuer">University of Moratuwa</span>
-                            </div>
-                            <img src="assets/img/python certificate.png" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                           <a href="assets/img/java.pdf" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Java(Basic) </h3>
-                                <span class="cert__issuer">hackerrank</span>
-                            </div>
-                            <img src="assets/img/java certificate.png" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                             <a href="assets/img/python .pdf" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name">Python(Basic) </h3>
-                                <span class="cert__issuer">hackerrank</span>
-                            </div>
-                            <img src="assets/img/python basic.png" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                               <a href="#" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name"> Introduction to Cloud : 101</h3>
-                                <span class="cert__issuer">AWS</span>
-                            </div>
-                            <img src="assets/img/aws.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                         <a href="https://www.hackerrank.com/profile/hapuarachchiran1" target="_blank" class="cert__card">
-                            <div class="cert__content">
-                                   <i class='bx bx-award cert__icon'></i> <h3 class="cert__name"> Java / Python Gold Badge</h3>
-                                <span class="cert__issuer">hackerrank</span>
-                            </div>
-                            <img src="assets/img/java gold.jpg" alt="Cert Preview" class="cert__img">
-                            <div class="cert__overlay">
-                                <div class="cert__button">View Certificate</div>
-                            </div>
-                        </a>
-                    </div>
-                    </div>
-                
-            </div>
-            </section>
-
-          <section class="sports section" id="sports">
-                <h2 class="section-title">Sports</h2>
-
-                <div class="sports__container bd-grid">
-                    
-                    <div class="sports__card">
-                        <img src="assets/img/badminton.jpg" alt="Badminton" class="sports__bg">
-                        <div class="sports__overlay">
-                            <h3 class="sports__name">Badminton</h3>
-                        </div>
-                    </div>
-
-                    <div class="sports__card">
-                        <img src="assets/img/chess.jpg" alt="Chess" class="sports__bg">
-                        <div class="sports__overlay">
-                            <h3 class="sports__name">Chess</h3>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p class="footer__title">Manuja Hapuarachchi</p>
-            <div class="footer__social">
-                <a href="https://www.linkedin.com/in/manujahapuarachchi/" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/ManujaRansara" class="footer__icon"><i class='bx bxl-github' ></i></a>
-                    <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="footer__icon"><i class="fab fa-hackerrank"></i></a>
-                    <a href="mailto:hapuarachchiransara@gmail.com" class="footer__icon">
-                       <i class='bx bx-envelope' style="font-size:30px; "></i>
+                <div class="cert__container">
+                    <a href="assets/img/ISTQBCertificate.pdf" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Foundation Level Certified Tester Exam</h3><span class="cert__issuer">ISTQB</span></div>
+                        <img src="assets/img/ISTQBCertificate.png" alt="ISTQB certificate preview" class="cert__img">
+                        <div class="cert__overlay"><div class="cert__result">Result: 39/40</div><div class="cert__button">View Certificate</div></div>
                     </a>
+                    <a href="https://www.linkedin.com/learning/certificates/facea646eee6e0789a611946167c924fb71f7b3de9b5732acc6c5e974d46afd3" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Complete Guide to Java Design Patterns</h3><span class="cert__issuer">LinkedIn Learning</span></div>
+                        <img src="assets/img/design patterns certificate.jpg" alt="Java design patterns certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="https://www.linkedin.com/learning/certificates/b08c67aecd542d24cbd41d4d2b72a3b752bda56b1d526b9956118d01b7ee1cfb" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Java Object-Oriented Programming</h3><span class="cert__issuer">LinkedIn Learning</span></div>
+                        <img src="assets/img/Java object oriented programming certificate.jpg" alt="Java OOP certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="https://www.linkedin.com/learning/certificates/7180799507aafb7ed25e903dec8b5a3d521913d4f532baed89dfd589ececa568" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Machine Learning Foundations: Statistics</h3><span class="cert__issuer">LinkedIn Learning</span></div>
+                        <img src="assets/img/Machine Learning certificate.jpg" alt="Machine learning certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="https://www.linkedin.com/learning/certificates/4a57019deca75652cdecd26b2e796a9353de4bb2ecd1a5414392a8006032c7d7" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Deep Learning: Getting Started</h3><span class="cert__issuer">LinkedIn Learning</span></div>
+                        <img src="assets/img/Deep Learning.jpg" alt="Deep learning certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="assets/img/python .pdf" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Python for Beginners</h3><span class="cert__issuer">University of Moratuwa</span></div>
+                        <img src="assets/img/python certificate.png" alt="Python for Beginners certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="assets/img/java.pdf" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Java (Basic)</h3><span class="cert__issuer">HackerRank</span></div>
+                        <img src="assets/img/java certificate.png" alt="HackerRank Java certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="assets/img/python .pdf" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Python (Basic)</h3><span class="cert__issuer">HackerRank</span></div>
+                        <img src="assets/img/python basic.png" alt="HackerRank Python certificate preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Introduction to Cloud: 101</h3><span class="cert__issuer">AWS</span></div>
+                        <img src="assets/img/aws.jpg" alt="AWS training preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Certificate</div></div>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/hapuarachchiran1" target="_blank" rel="noopener noreferrer" class="cert__card">
+                        <div class="cert__content"><i class="bx bx-award cert__icon"></i><h3 class="cert__name">Java / Python Gold Badge</h3><span class="cert__issuer">HackerRank</span></div>
+                        <img src="assets/img/java gold.jpg" alt="HackerRank gold badge preview" class="cert__img"><div class="cert__overlay"><div class="cert__button">View Profile</div></div>
+                    </a>
+                </div>
             </div>
-            <p class="footer__copy">&#169; Developed by Manuja. All rights reserved</p>
-        </footer>
-         
-        
+        </section>
 
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <section class="sports section" id="sports">
+            <h2 class="section-title">Sports</h2>
+            <div class="sports__container bd-grid">
+                <div class="sports__card"><img src="assets/img/badminton.jpg" alt="Badminton" class="sports__bg"><div class="sports__overlay"><h3 class="sports__name">Badminton</h3></div></div>
+                <div class="sports__card"><img src="assets/img/chess.jpg" alt="Chess" class="sports__bg"><div class="sports__overlay"><h3 class="sports__name">Chess</h3></div></div>
+            </div>
+        </section>
+    </main>
 
-        <script>
-            var typed = new Typed('#typewriter', {
-                strings: [
-                    "<span style='font-size: 0.85em; font-weight: 700; color: #111; letter-spacing: -0.5px; line-height: 1.2;'>Hi, I'm</span><br>" +
-                    "<span style='white-space: nowrap; font-weight: 700; letter-spacing: -2px; line-height: 1.1; background: linear-gradient(90deg, rgb(11, 41, 138) 0%, rgb(26, 102, 255) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>Manuja <br>  Hapuarachchi</span>" +
-                    "<span style='color: rgb(11, 41, 138); font-weight: 700;'>.</span>"
-                ],
-                typeSpeed: 60,
-                backDelay: 4000,
-                startDelay: 500,
-                showCursor: true,    
-                cursorChar: "<span style='color: rgb(11, 41, 138); font-weight: 300;'>|</span>", 
-                loop: true,          
-                fadeOut: true,       
-                fadeOutClass: 'typed-fade-out',
-                fadeOutDelay: 500    
+    <footer class="footer">
+        <p class="footer__title">Manuja Hapuarachchi</p>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/manujahapuarachchi/" class="footer__icon" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/ManujaRansara" class="footer__icon" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="https://www.hackerrank.com/profile/hapuarachchiran1" class="footer__icon" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+            <a href="mailto:hapuarachchiransara@gmail.com" class="footer__icon" aria-label="Email"><i class="bx bx-envelope" style="font-size:30px"></i></a>
+        </div>
+        <p class="footer__copy">&#169; Developed by Manuja. All rights reserved</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        const typed = new Typed('#typewriter', {
+            strings: [
+                "<span style='font-size:.85em;font-weight:700;color:#111;letter-spacing:-.5px;line-height:1.2'>Hi, I'm</span><br>" +
+                "<span style='white-space:nowrap;font-weight:700;letter-spacing:-2px;line-height:1.1;background:linear-gradient(90deg,var(--profile-accent-dark),var(--profile-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent'>Manuja <br>Hapuarachchi</span>" +
+                "<span style='color:var(--profile-accent);font-weight:700'>.</span>"
+            ],
+            typeSpeed: 60,
+            backDelay: 4000,
+            startDelay: 500,
+            showCursor: true,
+            cursorChar: "<span style='color:var(--profile-accent);font-weight:300'>|</span>",
+            loop: true,
+            fadeOut: true,
+            fadeOutClass: 'typed-fade-out',
+            fadeOutDelay: 500
+        });
+    </script>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        (() => {
+            const header = document.querySelector('.l-header');
+            const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 60);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+
+    <script>
+        function forceDownload(event, url, filename) {
+            event.preventDefault();
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('The CV could not be downloaded.');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobURL = URL.createObjectURL(blob);
+                    const anchor = document.createElement('a');
+                    anchor.href = blobURL;
+                    anchor.download = filename;
+                    document.body.appendChild(anchor);
+                    anchor.click();
+                    anchor.remove();
+                    setTimeout(() => URL.revokeObjectURL(blobURL), 1000);
+                })
+                .catch(() => window.open(url, '_blank', 'noopener,noreferrer'));
+        }
+    </script>
+
+    <script>
+        (() => {
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            const overlay = document.getElementById('nav-overlay');
+            if (!navMenu || !navToggle || !overlay) return;
+
+            function closeNav() {
+                navMenu.classList.remove('show');
+                overlay.classList.remove('show');
+                navToggle.setAttribute('aria-expanded', 'false');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('bx-menu');
+                    icon.classList.remove('bx-x');
+                }
+            }
+
+            const observer = new MutationObserver(() => {
+                const isOpen = navMenu.classList.contains('show');
+                overlay.classList.toggle('show', isOpen);
+                navToggle.setAttribute('aria-expanded', String(isOpen));
             });
-        </script>
-        
-        <!-- Load main.js (handles nav toggle .show class) -->
-        <script src="assets/js/main.js"></script>
-
-        <!-- ─────────────────────────────────────────────────────
-             SCROLL — toggle .scrolled on header after 60px
-             so the navbar fades in from transparent.
-        ───────────────────────────────────────────────────── -->
-        <script>
-            (function () {
-                const header = document.querySelector('.l-header');
-                function onScroll() {
-                    if (window.scrollY > 60) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
+            observer.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
+            overlay.addEventListener('click', closeNav);
+            document.querySelectorAll('.nav__link').forEach(link => link.addEventListener('click', closeNav));
+            navToggle.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    navToggle.click();
                 }
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll(); // run once on load in case page is already scrolled
-            })();
-        </script>
+            });
+        })();
+    </script>
 
-        <script>
-            function forceDownload(e, url, filename) {
-                e.preventDefault();
-                fetch(url)
-                    .then(response => response.blob())
-                    .then(blob => {
-                        const blobURL = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = blobURL;
-                        a.download = filename;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        window.URL.revokeObjectURL(blobURL);
-                    })
-                    .catch(() => window.open(url, '_blank'));
-            }
-        </script>
+    <script>
+        function toggleDescription(id, button) {
+            const description = document.getElementById(id);
+            if (!description) return;
+            const isOpen = description.classList.toggle('show-description');
+            button?.setAttribute('aria-expanded', String(isOpen));
+            const icon = button?.querySelector('i');
+            if (icon) icon.classList.toggle('rotate-icon', isOpen);
+        }
+    </script>
 
-        <!-- ─────────────────────────────────────────────────────
-             NAV OVERLAY — works alongside whatever main.js does.
-             Watches for the .show class on #nav-menu and mirrors
-             it on the overlay div; overlay tap closes everything.
-        ───────────────────────────────────────────────────── -->
-        <script>
-            (function () {
-                const navMenu   = document.getElementById('nav-menu');
-                const navToggle = document.getElementById('nav-toggle');
-                const overlay   = document.getElementById('nav-overlay');
-
-                function closeNav() {
-                    navMenu.classList.remove('show');
-                    overlay.classList.remove('show');
-                    const icon = navToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('bx-menu');
-                        icon.classList.remove('bx-x');
-                    }
-                }
-
-                /* Mirror .show on #nav-menu → overlay */
-                const mo = new MutationObserver(() => {
-                    if (navMenu.classList.contains('show')) {
-                        overlay.classList.add('show');
-                    } else {
-                        overlay.classList.remove('show');
-                    }
-                });
-                mo.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
-
-                /* Tap overlay → close */
-                overlay.addEventListener('click', closeNav);
-
-                /* Tap any nav link → close (good UX on mobile) */
-                document.querySelectorAll('.nav__link').forEach(link => {
-                    link.addEventListener('click', closeNav);
-                });
-            })();
-        </script>
-
-        <script>
-            function toggleDescription(id, btn) {
-                const desc = document.getElementById(id);
-                const icon = btn.querySelector('i');
-                desc.classList.toggle('show-description');
-                icon.classList.toggle('rotate-icon');
-            }
-        </script>
-
-        <script>
-            const observer = new IntersectionObserver((entries) => {
+    <script>
+        (() => {
+            if (!('IntersectionObserver' in window)) return;
+            const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    } else {
-                        entry.target.classList.remove('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                    else entry.target.classList.remove('active');
                 });
-            }, { threshold: 0.99 });
-
+            }, { threshold: 0.35 });
             document.querySelectorAll('.cert__card').forEach(card => observer.observe(card));
-        </script>
+        })();
+    </script>
+    <script>
+        (() => {
+            const navMenu = document.getElementById('nav-menu');
+            if (!navMenu || !navMenu.parentNode) return;
 
-        <script>
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
+            // Remember the original location so desktop navigation can be restored.
+            const originalParent = navMenu.parentNode;
+            const originalNextSibling = navMenu.nextSibling;
+            const mobileQuery = window.matchMedia('(max-width: 1199px)');
 
-            function resize() {
-                canvas.width  = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', () => { resize(); init(); });
-            resize();
-
-            class Particle {
-                constructor() { this.reset(true); }
-                reset(randomY = false) {
-                    this.x      = Math.random() * canvas.width;
-                    this.y      = randomY ? Math.random() * canvas.height : canvas.height + 5;
-                    this.size   = Math.random() * 1.8 + 0.4;
-                    this.speedX = (Math.random() - 0.5) * 0.35;
-                    this.speedY = -(Math.random() * 0.45 + 0.1);
-                    this.alpha  = Math.random() * 0.45 + 0.1;
-                    const r = Math.random();
-                    if      (r < 0.22) this.hue = `26,102,255`;
-                    else if (r < 0.40) this.hue = `0,184,230`;
-                    else if (r < 0.65) this.hue = `6,8,16`;
-                    else               this.hue = `13,30,80`;
-                }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    this.alpha -= 0.0003;
-                    if (this.y < -4 || this.alpha <= 0) this.reset();
-                    if (this.x < 0) this.x = canvas.width;
-                    if (this.x > canvas.width) this.x = 0;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${this.hue},${this.alpha})`;
-                    ctx.fill();
+            function placeMenuCorrectly() {
+                if (mobileQuery.matches) {
+                    // Put the menu directly under <body> so fixed positioning is
+                    // measured against the viewport, not the header.
+                    if (navMenu.parentNode !== document.body) {
+                        document.body.appendChild(navMenu);
+                    }
+                } else if (navMenu.parentNode !== originalParent) {
+                    // Restore the menu to the navbar for the desktop layout.
+                    if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+                        originalParent.insertBefore(navMenu, originalNextSibling);
+                    } else {
+                        originalParent.appendChild(navMenu);
+                    }
                 }
             }
 
-            function init() {
-                particles = [];
-                const n = Math.floor((canvas.width * canvas.height) / 7200);
-                for (let i = 0; i < n; i++) particles.push(new Particle());
+            placeMenuCorrectly();
+
+            if (typeof mobileQuery.addEventListener === 'function') {
+                mobileQuery.addEventListener('change', placeMenuCorrectly);
+            } else {
+                mobileQuery.addListener(placeMenuCorrectly);
             }
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => { p.update(); p.draw(); });
-                requestAnimationFrame(animate);
-            }
-            init();
-            animate();
-        </script>
-    </body>
+
+            window.addEventListener('resize', placeMenuCorrectly, { passive: true });
+        })();
+    </script>
+
+    <!-- Replaces the old inline grid/axes/function graph animation. -->
+    <script src="assets/js/scroll-geometry.js"></script>
+</body>
 </html>

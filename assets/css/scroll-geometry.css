@@ -1,0 +1,47 @@
+:root {
+    --profile-accent: rgb(30, 105, 225);
+    --profile-accent-dark: rgb(15, 49, 112);
+    --profile-accent-soft: rgba(30, 105, 225, 0.16);
+    --profile-accent-rgb: 30, 105, 225;
+    --profile-photo-rgb: 30, 105, 225;
+}
+
+/* A dedicated stacking context keeps the animated canvas behind the site content. */
+body {
+    isolation: isolate;
+}
+
+#particle-canvas {
+    position: fixed !important;
+    inset: 0 !important;
+    display: block;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    opacity: 0.9;
+    background: transparent !important;
+}
+
+@supports (height: 100dvh) {
+    #particle-canvas {
+        height: 100dvh !important;
+    }
+}
+
+.sun-glow {
+    pointer-events: none;
+}
+
+/* Keep decorative effects restrained on smaller screens. */
+@media (max-width: 600px) {
+    #particle-canvas {
+        opacity: 0.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #particle-canvas {
+        opacity: 0.55;
+    }
+}

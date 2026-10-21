@@ -1,0 +1,210 @@
+/* Image-matched profile glow and restrained snow-like ambient particles. */
+:root {
+    --profile-photo-rgb: 26, 102, 255;
+    --profile-accent-rgb: 26, 102, 255;
+    --profile-accent: rgb(26, 102, 255);
+    --profile-accent-dark: rgb(13, 30, 80);
+    --profile-accent-soft: rgba(26, 102, 255, 0.16);
+}
+
+/* Keep the ambient particle canvas fixed behind content and never intercept clicks. */
+#particle-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.92;
+}
+
+/* Ensure page content remains above the quiet particle layer. */
+.l-header {
+    z-index: 1000;
+}
+
+.l-main,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Match the profile's HUD rings to the colour sampled from perfil.png. */
+.hud-ring {
+    border-color: rgba(var(--profile-accent-rgb), 0.30) !important;
+    box-shadow:
+        0 0 10px rgba(var(--profile-accent-rgb), 0.10),
+        inset 0 0 10px rgba(var(--profile-accent-rgb), 0.045);
+}
+
+.hud-ring-1 {
+    border-color: rgba(var(--profile-accent-rgb), 0.46) !important;
+}
+
+.hud-ring-2 {
+    border-color: rgba(var(--profile-accent-rgb), 0.28) !important;
+}
+
+.hud-ring-3 {
+    border-color: rgba(var(--profile-accent-rgb), 0.19) !important;
+}
+
+/* Animated frame uses the detected colour, retaining the existing frame geometry. */
+.home__profile-container {
+    isolation: isolate;
+}
+
+.home__profile-frame {
+    position: relative;
+}
+
+.profile-gradient {
+    background: linear-gradient(
+        125deg,
+        rgba(var(--profile-accent-rgb), 0.22) 0%,
+        rgba(var(--profile-accent-rgb), 0.96) 32%,
+        rgba(var(--profile-accent-rgb), 0.36) 55%,
+        rgba(var(--profile-accent-rgb), 0.90) 78%,
+        rgba(var(--profile-accent-rgb), 0.22) 100%
+    ) !important;
+    background-size: 220% 220% !important;
+    animation: profileGradientFlow 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(var(--profile-accent-rgb), 0.24));
+}
+
+.home__profile-img {
+    position: relative;
+    z-index: 1;
+}
+
+/* Reuse the photo-matched palette in the ambient glow and heading accent. */
+.sun-glow {
+    background: radial-gradient(
+        circle,
+        rgba(var(--profile-accent-rgb), 0.10) 0%,
+        rgba(var(--profile-accent-rgb), 0.035) 36%,
+        transparent 70%
+    ) !important;
+}
+
+@keyframes profileGradientFlow {
+    0%, 100% { background-position: 0% 45%; }
+    50% { background-position: 100% 55%; }
+}
+
+/* Small helper styles for the supplied portfolio markup. */
+.education__details {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #343434;
+}
+
+.education__degree {
+    font-weight: 600;
+}
+
+.education__note {
+    margin-left: 14px;
+    font-size: 0.88rem;
+    color: #777;
+    font-style: italic;
+}
+
+.education__separator {
+    margin-left: 12px;
+}
+
+.education__degree--spaced {
+    margin-top: 14px;
+}
+
+.experience__heading,
+.project__heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.experience__role {
+    margin: 6px 0 0 14px;
+    color: #343434;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.description-toggle {
+    margin-left: auto;
+    padding: 5px 8px;
+    background: none;
+    color: var(--profile-accent-dark);
+    border: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-toggle:focus-visible {
+    outline: 2px solid var(--profile-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.project-card {
+    margin-bottom: 20px;
+}
+
+.project__logo {
+    width: 120px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.project__logo--farmio {
+    height: 46px;
+}
+
+.project__logo--convo {
+    height: 70px;
+}
+
+.project__title {
+    font-weight: 600;
+}
+
+.project__meta {
+    margin-left: 14px;
+    font-size: 0.88rem;
+    color: #3a3939;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .experience__heading,
+    .project__heading {
+        gap: 8px;
+    }
+
+    .experience__heading .skills__icon-img,
+    .project__heading .project__logo,
+    .project__heading .skills__icon-img {
+        max-width: 76px;
+        object-fit: contain;
+    }
+
+    .project__title,
+    .experience__heading .skills__name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-gradient {
+        animation: none !important;
+    }
+}
